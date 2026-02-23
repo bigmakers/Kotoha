@@ -1,0 +1,33 @@
+name: SubtitleApp
+options:
+  bundleIdPrefix: com.subtitle
+  deploymentTarget:
+    iOS: "17.0"
+  xcodeVersion: "15.0"
+  generateEmptyDirectories: true
+  createIntermediateGroups: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    TARGETED_DEVICE_FAMILY: "1,2"
+
+targets:
+  SubtitleApp:
+    type: application
+    platform: iOS
+    sources:
+      - path: Sources
+        type: group
+      - path: Shaders
+        type: group
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.subtitle.SubtitleApp
+        INFOPLIST_FILE: Resources/Info.plist
+        GENERATE_INFOPLIST_FILE: false
+        MTL_ENABLE_DEBUG_INFO: "INCLUDE_SOURCE"
+        CODE_SIGN_STYLE: Automatic
+    scheme:
+      gatherCoverageData: false
+      testTargets: []
